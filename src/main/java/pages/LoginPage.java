@@ -24,17 +24,19 @@ public class LoginPage extends BasePage {
         return driver.findElement(By.xpath(String.format(ERROR_TEXT_POP_UP, validationMessageText))).getText();
     }
 
-    public void clickButtonEmptyLoginPassword() {
+    public void clickLoginButton() {
         driver.findElement(BUTTON_LOGIN).click();
     }
 
     public void clickButtonEmptyPassword(String username) {
         driver.findElement(USERNAME_INPUT).sendKeys(username);
-        driver.findElement(BUTTON_LOGIN).click();
     }
 
     public void clickButtonEmptylogin(String password) {
         driver.findElement(PASSWORD_INPUT).sendKeys(password);
-        driver.findElement(BUTTON_LOGIN).click();
+    }
+
+    public void waitForElementLocate() {
+        waitForElementLocated(BUTTON_LOGIN, 10);
     }
 }

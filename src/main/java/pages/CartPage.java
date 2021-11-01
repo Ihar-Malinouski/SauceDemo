@@ -10,7 +10,7 @@ public class CartPage extends BasePage {
 
     private static final String PRODUCT_PRICE = "//*[text()='%s']/ancestor::*[@class='cart_item']//*[@class='inventory_item_price']";
     private static final String REMOVE_BUTTON = "//*[text()='%s']/ancestor::*[@class='cart_item']//button";
-    private static final String QUANTITY_LABEL = "//*[@class='cart_quantity']";
+    private static final String QUANTITY_LABEL = "//*[text()='%s']/ancestor::*[@class='cart_item']//*[@class='cart_quantity']";
     private static final String QUANTITY_ICON_CART = "//*[@class='shopping_cart_badge']";
 
     public String getProductPrice(String productName) {
@@ -21,11 +21,11 @@ public class CartPage extends BasePage {
         driver.findElement(By.xpath(String.format(REMOVE_BUTTON, productName))).click();
     }
 
-    public String getQuantityLabel(String numberLabel) {
-        return driver.findElement(By.xpath(String.format(QUANTITY_LABEL, numberLabel))).getText();
+    public String getQuantityLabel(String productName) {
+        return driver.findElement(By.xpath(String.format(QUANTITY_LABEL, productName))).getText();
     }
-
-    public String getQuantityIconCart(String numberIconCart) {
-        return driver.findElement(By.xpath(String.format(QUANTITY_ICON_CART, numberIconCart))).getText();
+    public String getQuantityIconCart() {
+        return driver.findElement(By.xpath(String.format(QUANTITY_ICON_CART))).getText();
     }
 }
+
