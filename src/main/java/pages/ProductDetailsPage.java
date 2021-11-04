@@ -10,8 +10,9 @@ public class ProductDetailsPage extends BasePage {
 
     private static final String ADD_PRODUCT_TO_CART_FROM_DETAILS_BUTTON = "//*[text()='%s']/ancestor::*[@class='inventory_details_desc_container']/*[contains(@class, 'btn_inventory')]";
 
-    public void addProductToCartFromDetails(String productName) {
+    public ProductDetailsPage addProductToCartFromDetails(String productName) {
         driver.findElement(By.xpath(String.format(ADD_PRODUCT_TO_CART_FROM_DETAILS_BUTTON, productName))).click();
+        return this;
     }
 
 }

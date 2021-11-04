@@ -14,29 +14,40 @@ public class LoginPage extends BasePage {
     private static final By BUTTON_LOGIN = By.xpath("//*[@id='login-button']");
     private static final String ERROR_TEXT_POP_UP = "//*[@class='error-button']/ancestor::*[@class='error-message-container error']/h3";
 
-    public void login(String username, String password) {
+    public ProductsPage login(String username, String password) {
         driver.findElement(USERNAME_INPUT).sendKeys(username);
         driver.findElement(PASSWORD_INPUT).sendKeys(password);
         driver.findElement(BUTTON_LOGIN).click();
+        return new ProductsPage(driver);
+    }
+
+    public LoginPage openPage() {
+        openPage(BASE_URL);
+        waitForElementLocate();
+        return this;
     }
 
     public String getErrorText(String validationMessageText) {
         return driver.findElement(By.xpath(String.format(ERROR_TEXT_POP_UP, validationMessageText))).getText();
     }
 
-    public void clickLoginButton() {
+    public LoginPage errorFieldClickButton() {
         driver.findElement(BUTTON_LOGIN).click();
+        return this;
     }
 
-    public void clickButtonEmptyPassword(String username) {
+    public LoginPage getEmptyPasswordField(String username) {
         driver.findElement(USERNAME_INPUT).sendKeys(username);
+        return this;
     }
 
-    public void clickButtonEmptylogin(String password) {
+    public LoginPage getEmptyloginField(String password) {
         driver.findElement(PASSWORD_INPUT).sendKeys(password);
+        return this;
     }
 
-    public void waitForElementLocate() {
+    public LoginPage waitForElementLocate() {
         waitForElementLocated(BUTTON_LOGIN, 10);
+        return this;
     }
 }
