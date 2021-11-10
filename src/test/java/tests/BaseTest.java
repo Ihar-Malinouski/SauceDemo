@@ -3,6 +3,7 @@ package tests;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import pages.*;
@@ -18,8 +19,13 @@ public class BaseTest {
 
     @BeforeMethod
     public void initTest() {
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
+        if (System.getProperty("browser").equals("chrome")) {
+            WebDriverManager.chromedriver().setup();
+            driver = new ChromeDriver();
+        } else if (System.getProperty("browser").equals("firefox")) {
+            WebDriverManager.firefoxdriver().setup();
+            driver = new FirefoxDriver();
+        }
         driver.manage().window().maximize();
         loginPage = new LoginPage(driver);
         productsPage = new ProductsPage(driver);

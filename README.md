@@ -19,3 +19,15 @@ Response:
 ![img.png](img.png)
 
 2) mvn versions:use-latest-versions - команда для обновления всех доступных "свежих" версий "одним махом" (не выполнял у себя, так как считаю версию selenium-java:3.141.59 самой стабильной для моего проекта:)
+
+3) Поместил все версии в properties
+![img_1.png](img_1.png)
+   
+4) Добавил команду для MAVEN в конфигурации:
+    - SauceDemo [mvn,clean,test] (почистить и запустить все кейсы)
+    - SauceDemo [mvn,clean,-Dtest=CartTest] (почистить и запустить все методы из класса CartTest)
+    - SauceDemo [mvn clean -Dtest=CartTest#priceComparisonInDetailTest] (запускаем метод priceComparisonInDetailTest из класса CartTest )
+    - SauceDemo [mvn clean -Dtest=CartTest#priceComparisonInDetailTest+unsuccessfulAuthorizationTest] (запускаем методы priceComparisonInDetailTest и unsuccessfulAuthorizationTest) из класса CartTest)
+![img_2.png](img_2.png)
+
+5) 
