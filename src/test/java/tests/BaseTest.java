@@ -14,7 +14,6 @@ public class BaseTest {
     CartPage cartPage;
     CheckoutPage checkoutPage;
     ProductDetailsPage productDetailsPage;
-    LoginPageFactory loginPageFactory;
 
 
     @BeforeMethod
@@ -27,8 +26,6 @@ public class BaseTest {
         cartPage = new CartPage(driver);
         checkoutPage = new CheckoutPage(driver);
         productDetailsPage = new ProductDetailsPage(driver);
-        loginPageFactory = new LoginPageFactory(driver);
-
     }
 
     @AfterMethod

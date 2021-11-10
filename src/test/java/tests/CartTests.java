@@ -60,7 +60,7 @@ public class CartTests extends BaseTest {
 
     @Test
     public void addProductToCartThisPageFactoryTest() {
-        loginPageFactory.openPage()
+        loginPage.openPage()
                 .login("standard_user", "secret_sauce")
                 .addProductToCart("Sauce Labs Fleece Jacket");
         cartPage.openPage();
@@ -69,7 +69,7 @@ public class CartTests extends BaseTest {
 
     @Test
     public void addInvalidCheckoutStepOneTest() {
-        loginPageFactory.openPage()
+        loginPage.openPage()
                 .login("standard_user", "secret_sauce")
                 .addProductToCart("Sauce Labs Onesie");
         cartPage.openPage()
