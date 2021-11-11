@@ -9,7 +9,7 @@ import org.testng.annotations.BeforeMethod;
 import pages.*;
 
 public class BaseTest {
-    WebDriver driver;
+     WebDriver driver;
     LoginPage loginPage;
     ProductsPage productsPage;
     CartPage cartPage;

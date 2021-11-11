@@ -10,7 +10,7 @@
         <parameter name="lastName" value="Malinouski"/>
         <parameter name="zip" value="123"/>
         <classes>
-            <class name="tests.CartTests"/>
+             <class name="tests.CartTests"/>
         </classes>
     </test>
 </suite>

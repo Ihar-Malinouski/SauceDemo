@@ -15,7 +15,7 @@ public class LoginPage extends BasePage {
     private static final String ERROR_TEXT_POP_UP = "//*[@class='error-button']/ancestor::*[@class='error-message-container error']/h3";
 
     public ProductsPage login(String username, String password) {
-        driver.findElement(USERNAME_INPUT).sendKeys(username);
+         driver.findElement(USERNAME_INPUT).sendKeys(username);
         driver.findElement(PASSWORD_INPUT).sendKeys(password);
         driver.findElement(BUTTON_LOGIN).click();
         return new ProductsPage(driver);
