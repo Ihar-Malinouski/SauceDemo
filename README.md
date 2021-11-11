@@ -1,11 +1,3 @@
-Чек лист - проверки: 
-1) "addProductToCartTest" - Логинимся с валидными данными(LOGIN: "problem_user", PASSWORD: "secret_sauce"), добавляем товар в корзину, переходим в корзину и проверяем цену товара в корзине (Делали на занятии)
-2) Атворизоваться, выбрать книгу с наименованием "Sauce Labs Onesie" и сравнить цену на странице "CartPage", перейти на страницу оплаты (CheckoutPage), ввести валидные данные в поля "FIRST NAME", "LAST NAME" и "ZIP/POSTAL CODE". Далее нажать кнопку "CONTINUE".
-3) Авторизрваться, добавить две книги("Sauce Labs Onesie" и "Sauce Labs Fleece Jacket") и кдалить последнюю добавленную(Sauce Labs Fleece Jacket).
-4) Авторизрваться, кликнуть по картинке для товара с наименованием "Sauce Labs Fleece Jacket". На странице Детали товара сравнить этот же товар по имени и нажать кнопку "ADD TO CART". Перейти в корзину и сравнить фактическое количество книг с отображением на иконке "Корзина"
-5) Попытка авторизоваться с невалидным LOGIN (Например: Ihar) и проверить валидационный текст сообщения. Попытка ся с невалидным LOGIN(Например: Ihar2) и проверить валидационный текст сообщения.
-
-
 Команды для работы с MAVEN для проекта SauceDemo:
 1) mvn versions:display-dependency-updates - просмотр доступных "свежих" версий для библиотек этого проекта
 
@@ -33,4 +25,17 @@ Response:
 5) mvn clean -Dtest=CartTests#addProductToCartTest -Dlogin=standard_user -Dpassword=secret_sauce test
 Запустил через терминал класс CartTests метод addProductToCartTest с логином "standard_user" и паролем "secret_sauce"3
 
-6) 
+6) mvn clean test -DsuiteXmlFile=src/test/resources/"Smoke.xml
+Запуск тестов из терминала из Smoke.xml с параметрами для прогона внутри xml ![img_3.png](img_3.png)
+РЕЗУЛЬТАТЫ ПРОГОНА ТЕСТОВ:
+Ссылка: localhost:63342/SauceDemo/target/surefire-reports/Test%20suite/Tests.html?_ijt=62j62clpm448u5gq33qa491u96&_ij_reload ![img_4.png](img_4.png)
+Скрины: ![img_5.png](img_5.png)  ![img_6.png](img_6.png)  ![img_7.png](img_7.png) ![img_8.png](img_8.png)
+
+
+Чек лист - проверки:
+1) "addProductToCartTest" - Логинимся с валидными данными(LOGIN: "problem_user", PASSWORD: "secret_sauce"), добавляем товар в корзину, переходим в корзину и проверяем цену товара в корзине (Делали на занятии)
+2) Атворизоваться, выбрать книгу с наименованием "Sauce Labs Onesie" и сравнить цену на странице "CartPage", перейти на страницу оплаты (CheckoutPage), ввести валидные данные в поля "FIRST NAME", "LAST NAME" и "ZIP/POSTAL CODE". Далее нажать кнопку "CONTINUE".
+3) Авторизрваться, добавить две книги("Sauce Labs Onesie" и "Sauce Labs Fleece Jacket") и кдалить последнюю добавленную(Sauce Labs Fleece Jacket).
+4) Авторизрваться, кликнуть по картинке для товара с наименованием "Sauce Labs Fleece Jacket". На странице Детали товара сравнить этот же товар по имени и нажать кнопку "ADD TO CART". Перейти в корзину и сравнить фактическое количество книг с отображением на иконке "Корзина"
+5) Попытка авторизоваться с невалидным LOGIN (Например: Ihar) и проверить валидационный текст сообщения. Попытка ся с невалидным LOGIN(Например: Ihar2) и проверить валидационный текст сообщения.
+

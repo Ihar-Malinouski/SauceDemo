@@ -7,80 +7,84 @@ import org.testng.annotations.Test;
 
 public class CartTests extends BaseTest {
 
-  //  @Test
-//    public void addProductToCartTest() {
-//        loginPage.openPage()
-//                .login(System.getProperty("login"),System.getProperty("password"))
-//                .addProductToCart("Sauce Labs Fleece Jacket");
-//        cartPage.openPage();
-//        Assert.assertEquals(cartPage.getProductPrice("Sauce Labs Fleece Jacket"), "$49.99");
-//    }
-
-    @Parameters({"login"})
+    @Parameters({"login", "password", "secondNameProduct"})
     @Test
-    public void priceComparisonInDetailTest(@Optional("1") String login) {
+    public void addProductToCartTest(@Optional("standard_user") String login, @Optional("secret_sauce") String password, @Optional("Sauce Labs Onesie") String secondNameProduct) {
         loginPage.openPage()
-                .login(login,"secret_sauce")
-                .addProductToCart("Sauce Labs Onesie");
+                .login(login, password)
+                .addProductToCart(secondNameProduct);
         cartPage.openPage();
-        Assert.assertEquals(cartPage.getProductPrice("Sauce Labs Onesie"), "$7.99");
+        Assert.assertEquals(cartPage.getProductPrice(secondNameProduct), "$49.99");
     }
-    // <parameter name="login" value="standard_user"/>
-    // <parameter name="password" value="secret_sauce"/>
-//    @Test
-//    public void addingTwoBooksTest() {
-//        loginPage.openPage()
-//                .login("standard_user", "secret_sauce")
-//                .addProductToCart("Sauce Labs Onesie")
-//                .addProductToCart("Sauce Labs Fleece Jacket");
-//        cartPage.openPage()
-//                .deleteProductFromCart("Sauce Labs Fleece Jacket");
-//        Assert.assertEquals(cartPage.getQuantityIconCart(), "1");
-//    }
-//
-//    @Test
-//    public void productComparisonOnTheDetailsPageTest() {
-//        loginPage.openPage()
-//                .login("standard_user", "secret_sauce")
-//                .clickOnProductImage("Sauce Labs Fleece Jacket")
-//                .addProductToCartFromDetails("Sauce Labs Fleece Jacket");
-//        cartPage.openPage();
-//        Assert.assertEquals(cartPage.getQuantityLabel("Sauce Labs Fleece Jacket"), cartPage.getQuantityIconCart());
-//    }
-//
-//    @Test
-//    public void unsuccessfulAuthorizationTest() {
-//        loginPage.openPage()
-//                .waitForElementLocate()
-//                .errorFieldClickButton();
-//        Assert.assertEquals("Epic sadface: Username is required", loginPage.getErrorText("ERROR_TEXT_POP_UP"));
-//        loginPage.getEmptyPasswordField("Ihar")
-//                .errorFieldClickButton();
-//        Assert.assertEquals("Epic sadface: Password is required", loginPage.getErrorText("ERROR_TEXT_POP_UP"));
-//        loginPage.getEmptyloginField("Ihar2")
-//                .errorFieldClickButton();
-//        Assert.assertEquals("Epic sadface: Username and password do not match any user in this service", loginPage.getErrorText("ERROR_TEXT_POP_UP"));
-//    }
-//
-//    @Test
-//    public void addProductToCartThisPageFactoryTest() {
-//        loginPage.openPage()
-//                .login("standard_user", "secret_sauce")
-//                .addProductToCart("Sauce Labs Fleece Jacket");
-//        cartPage.openPage();
-//        Assert.assertEquals(cartPage.getProductPrice("Sauce Labs Fleece Jacket"), "$49.99");
-//    }
-//
-//    @Test
-//    public void addInvalidCheckoutStepOneTest() {
-//        loginPage.openPage()
-//                .login("standard_user", "secret_sauce")
-//                .addProductToCart("Sauce Labs Onesie");
-//        cartPage.openPage()
-//                .checkoutClickButton()
-//                .fillInDataEntryForPayment("Ihar", "Malinouski", "123")
-//                .clickContinueButton();
-//        Assert.assertEquals("Error: Postal Code is required", checkoutPage.getErrorTextMessage("ERROR_TEXT_EMPTY_FIELD"));
-//    }
+
+    @Parameters({"login", "password", "firstNameProduct"})
+    @Test
+    public void priceComparisonInDetailTest(@Optional("standard_user") String login, @Optional("secret_sauce") String password, @Optional("Sauce Labs Onesie") String firstNameProduct) {
+        loginPage.openPage()
+                .login(login, password)
+                .addProductToCart(firstNameProduct);
+        cartPage.openPage();
+        Assert.assertEquals(cartPage.getProductPrice(firstNameProduct), "$7.99");
+    }
+
+    @Parameters({"login", "password", "firstNameProduct", "secondNameProduct"})
+    @Test
+    public void addingTwoBooksTest(@Optional("standard_user") String login, @Optional("secret_sauce") String password, @Optional("Sauce Labs Fleece Jacket") String secondNameProduct, @Optional("Sauce Labs Onesie") String firstNameProduct) {
+        loginPage.openPage()
+                .login(login, password)
+                .addProductToCart(firstNameProduct)
+                .addProductToCart(secondNameProduct);
+        cartPage.openPage()
+                .deleteProductFromCart(secondNameProduct);
+        Assert.assertEquals(cartPage.getQuantityIconCart(), "1");
+    }
+
+    @Parameters({"login", "password", "secondNameProduct"})
+    @Test
+    public void productComparisonOnTheDetailsPageTest(@Optional("standard_user") String login, @Optional("secret_sauce") String password, @Optional("Sauce Labs Onesie") String secondNameProduct) {
+        loginPage.openPage()
+                .login(login, password)
+                .clickOnProductImage(secondNameProduct)
+                .addProductToCartFromDetails(secondNameProduct);
+        cartPage.openPage();
+        Assert.assertEquals(cartPage.getQuantityLabel(secondNameProduct), cartPage.getQuantityIconCart());
+    }
+
+    @Test
+    public void unsuccessfulAuthorizationTest() {
+        loginPage.openPage()
+                .waitForElementLocate()
+                .errorFieldClickButton();
+        Assert.assertEquals("Epic sadface: Username is required", loginPage.getErrorText("ERROR_TEXT_POP_UP"));
+        loginPage.getEmptyPasswordField("Ihar")
+                .errorFieldClickButton();
+        Assert.assertEquals("Epic sadface: Password is required", loginPage.getErrorText("ERROR_TEXT_POP_UP"));
+        loginPage.getEmptyloginField("Ihar2")
+                .errorFieldClickButton();
+        Assert.assertEquals("Epic sadface: Username and password do not match any user in this service", loginPage.getErrorText("ERROR_TEXT_POP_UP"));
+    }
+
+    @Parameters({"login", "password", "secondNameProduct"})
+    @Test
+    public void addProductToCartThisPageFactoryTest(@Optional("standard_user") String login, @Optional("secret_sauce") String password, @Optional("Sauce Labs Onesie") String secondNameProduct) {
+        loginPage.openPage()
+                .login(login, password)
+                .addProductToCart(secondNameProduct);
+        cartPage.openPage();
+        Assert.assertEquals(cartPage.getProductPrice(secondNameProduct), "$49.99");
+    }
+
+    @Parameters({"login", "password", "firstNameProduct", "firstName", "lastName", "zip"})
+    @Test
+    public void addInvalidCheckoutStepOneTest(@Optional("standard_user") String login, @Optional("secret_sauce") String password, @Optional("Sauce Labs Onesie") String firstNameProduct,@Optional("ihar") String firstName, @Optional("Malinouski") String lastName,@Optional("123") String zip) {
+        loginPage.openPage()
+                .login(login, password)
+                .addProductToCart(firstNameProduct);
+        cartPage.openPage()
+                .checkoutClickButton()
+                .fillInDataEntryForPayment(firstName, lastName, zip)
+                .clickContinueButton();
+        Assert.assertEquals("Error: Postal Code is required", checkoutPage.getErrorTextMessage("ERROR_TEXT_EMPTY_FIELD"));
+    }
 }
 
