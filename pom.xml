@@ -13,7 +13,7 @@
         <maven.compiler.target>8</maven.compiler.target>
         <encoding>UTF-8</encoding>
         <testng.version>7.4.0</testng.version>
-        <apache.maven.plugins>3.0.0-M5</apache.maven.plugins>
+
         <github.bonigarcia.version>5.0.3</github.bonigarcia.version>
         <seleniumhq.version>3.141.59</seleniumhq.version>
     </properties>
@@ -22,7 +22,12 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>${apache.maven.plugins}</version>
+                <version>3.0.0-M5</version>
+                <configuration>
+                    <suiteXmlFiles>
+                        <suiteXmlFile>${suiteXmlFile}</suiteXmlFile>
+                    </suiteXmlFiles>
+                </configuration>
             </plugin>
         </plugins>
     </build>

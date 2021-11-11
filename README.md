@@ -30,4 +30,7 @@ Response:
     - SauceDemo [mvn clean -Dtest=CartTest#priceComparisonInDetailTest+unsuccessfulAuthorizationTest] (запускаем методы priceComparisonInDetailTest и unsuccessfulAuthorizationTest) из класса CartTest)
 ![img_2.png](img_2.png)
 
-5) 
+5) mvn clean -Dtest=CartTests#addProductToCartTest -Dlogin=standard_user -Dpassword=secret_sauce test
+Запустил через терминал класс CartTests метод addProductToCartTest с логином "standard_user" и паролем "secret_sauce"3
+
+6) 

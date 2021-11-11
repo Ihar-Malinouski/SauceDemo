@@ -1,32 +1,32 @@
 package tests;
 
 import org.testng.Assert;
+import org.testng.annotations.Optional;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 public class CartTests extends BaseTest {
 
-    @Test
-    public void addProductToCartTest() {
-        loginPage.openPage()
-                .login(System.getProperty("login"),System.getProperty("password"))
-                .addProductToCart("Sauce Labs Fleece Jacket");
-        cartPage.openPage();
-        Assert.assertEquals(cartPage.getProductPrice("Sauce Labs Fleece Jacket"), "$49.99");
-    }
-   // mvn clean -Dtest=CartTest#addProductToCartTest -Dlogin=standard_user -Dpassword=secret_sauce test
-    // запускаем из консоли без имени и пароля
+  //  @Test
+//    public void addProductToCartTest() {
+//        loginPage.openPage()
+//                .login(System.getProperty("login"),System.getProperty("password"))
+//                .addProductToCart("Sauce Labs Fleece Jacket");
+//        cartPage.openPage();
+//        Assert.assertEquals(cartPage.getProductPrice("Sauce Labs Fleece Jacket"), "$49.99");
+//    }
 
-    //mvn clean test -DsuiteXmlFile=src/test/resources/Smoke.xml -Dbrowser=chrome
-
+    @Parameters({"login"})
     @Test
-    public void priceComparisonInDetailTest() {
+    public void priceComparisonInDetailTest(@Optional("1") String login) {
         loginPage.openPage()
-                .login("standard_user", "secret_sauce")
+                .login(login,"secret_sauce")
                 .addProductToCart("Sauce Labs Onesie");
         cartPage.openPage();
         Assert.assertEquals(cartPage.getProductPrice("Sauce Labs Onesie"), "$7.99");
     }
-//
+    // <parameter name="login" value="standard_user"/>
+    // <parameter name="password" value="secret_sauce"/>
 //    @Test
 //    public void addingTwoBooksTest() {
 //        loginPage.openPage()
