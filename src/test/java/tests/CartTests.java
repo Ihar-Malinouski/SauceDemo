@@ -1,47 +1,53 @@
 package tests;
 
 import org.testng.Assert;
+import org.testng.annotations.Optional;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 public class CartTests extends BaseTest {
 
+    @Parameters({"login", "password", "secondNameProduct"})
     @Test
-    public void addProductToCartTest() {
+    public void addProductToCartTest(@Optional("standard_user") String login, @Optional("secret_sauce") String password, @Optional("Sauce Labs Onesie") String secondNameProduct) {
         loginPage.openPage()
-                .login("standard_user", "secret_sauce")
-                .addProductToCart("Sauce Labs Fleece Jacket");
+                .login(login, password)
+                .addProductToCart(secondNameProduct);
         cartPage.openPage();
-        Assert.assertEquals(cartPage.getProductPrice("Sauce Labs Fleece Jacket"), "$49.99");
+        Assert.assertEquals(cartPage.getProductPrice(secondNameProduct), "$49.99");
     }
 
+    @Parameters({"login", "password", "firstNameProduct"})
     @Test
-    public void priceComparisonInDetailTest() {
+    public void priceComparisonInDetailTest(@Optional("standard_user") String login, @Optional("secret_sauce") String password, @Optional("Sauce Labs Onesie") String firstNameProduct) {
         loginPage.openPage()
-                .login("standard_user", "secret_sauce")
-                .addProductToCart("Sauce Labs Onesie");
+                .login(login, password)
+                .addProductToCart(firstNameProduct);
         cartPage.openPage();
-        Assert.assertEquals(cartPage.getProductPrice("Sauce Labs Onesie"), "$7.99");
+        Assert.assertEquals(cartPage.getProductPrice(firstNameProduct), "$7.99");
     }
 
+    @Parameters({"login", "password", "firstNameProduct", "secondNameProduct"})
     @Test
-    public void addingTwoBooksTest() {
+    public void addingTwoBooksTest(@Optional("standard_user") String login, @Optional("secret_sauce") String password, @Optional("Sauce Labs Fleece Jacket") String secondNameProduct, @Optional("Sauce Labs Onesie") String firstNameProduct) {
         loginPage.openPage()
-                .login("standard_user", "secret_sauce")
-                .addProductToCart("Sauce Labs Onesie")
-                .addProductToCart("Sauce Labs Fleece Jacket");
+                .login(login, password)
+                .addProductToCart(firstNameProduct)
+                .addProductToCart(secondNameProduct);
         cartPage.openPage()
-                .deleteProductFromCart("Sauce Labs Fleece Jacket");
+                .deleteProductFromCart(secondNameProduct);
         Assert.assertEquals(cartPage.getQuantityIconCart(), "1");
     }
 
+    @Parameters({"login", "password", "secondNameProduct"})
     @Test
-    public void productComparisonOnTheDetailsPageTest() {
+    public void productComparisonOnTheDetailsPageTest(@Optional("standard_user") String login, @Optional("secret_sauce") String password, @Optional("Sauce Labs Onesie") String secondNameProduct) {
         loginPage.openPage()
-                .login("standard_user", "secret_sauce")
-                .clickOnProductImage("Sauce Labs Fleece Jacket")
-                .addProductToCartFromDetails("Sauce Labs Fleece Jacket");
+                .login(login, password)
+                .clickOnProductImage(secondNameProduct)
+                .addProductToCartFromDetails(secondNameProduct);
         cartPage.openPage();
-        Assert.assertEquals(cartPage.getQuantityLabel("Sauce Labs Fleece Jacket"), cartPage.getQuantityIconCart());
+        Assert.assertEquals(cartPage.getQuantityLabel(secondNameProduct), cartPage.getQuantityIconCart());
     }
 
     @Test
@@ -58,23 +64,25 @@ public class CartTests extends BaseTest {
         Assert.assertEquals("Epic sadface: Username and password do not match any user in this service", loginPage.getErrorText("ERROR_TEXT_POP_UP"));
     }
 
+     @Parameters({"login", "password", "secondNameProduct"})
     @Test
-    public void addProductToCartThisPageFactoryTest() {
-        loginPageFactory.openPage()
-                .login("standard_user", "secret_sauce")
-                .addProductToCart("Sauce Labs Fleece Jacket");
+    public void addProductToCartThisPageFactoryTest(@Optional("standard_user") String login, @Optional("secret_sauce") String password, @Optional("Sauce Labs Onesie") String secondNameProduct) {
+        loginPage.openPage()
+                .login(login, password)
+                .addProductToCart(secondNameProduct);
         cartPage.openPage();
-        Assert.assertEquals(cartPage.getProductPrice("Sauce Labs Fleece Jacket"), "$49.99");
+        Assert.assertEquals(cartPage.getProductPrice(secondNameProduct), "$49.99");
     }
 
+    @Parameters({"login", "password", "firstNameProduct", "firstName", "lastName", "zip"})
     @Test
-    public void addInvalidCheckoutStepOneTest() {
-        loginPageFactory.openPage()
-                .login("standard_user", "secret_sauce")
-                .addProductToCart("Sauce Labs Onesie");
+    public void addInvalidCheckoutStepOneTest(@Optional("standard_user") String login, @Optional("secret_sauce") String password, @Optional("Sauce Labs Onesie") String firstNameProduct,@Optional("ihar") String firstName, @Optional("Malinouski") String lastName,@Optional("123") String zip) {
+        loginPage.openPage()
+                .login(login, password)
+                .addProductToCart(firstNameProduct);
         cartPage.openPage()
                 .checkoutClickButton()
-                .fillInDataEntryForPayment("Ihar", "Malinouski", "123")
+                .fillInDataEntryForPayment(firstName, lastName, zip)
                 .clickContinueButton();
         Assert.assertEquals("Error: Postal Code is required", checkoutPage.getErrorTextMessage("ERROR_TEXT_EMPTY_FIELD"));
     }

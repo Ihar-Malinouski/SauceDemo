@@ -7,7 +7,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class BasePage {
-    WebDriver driver;
+     WebDriver driver;
 
     public static final String BASE_URL = "https://www.saucedemo.com";
     private static final By APP_LOGO = By.xpath("//*[@class='app_logo']");
