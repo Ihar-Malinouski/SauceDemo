@@ -1,6 +1,9 @@
 package tests;
 
 import io.qameta.allure.Description;
+import io.qameta.allure.Issue;
+import io.qameta.allure.Link;
+import io.qameta.allure.TmsLink;
 import org.testng.Assert;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
@@ -9,11 +12,15 @@ import org.testng.annotations.Test;
 public class CartTests extends BaseTest {
 
 
+
+    @Test (description = "Human-readable test name")
     @Description("Some detailed test description")
     @Parameters({"login", "password", "secondNameProduct"})
-    @Test (description = "Human-readable test name")
+    @Link("1111")
+    @Issue("2222")
+    @TmsLink("3333")
     public void addProductToCartTest(@Optional("standard_user") String login, @Optional("secret_sauce") String password, @Optional("Sauce Labs Onesie") String secondNameProduct) {
-        loginPage.openPage()
+            loginPage.openPage()
                  .login(login, password)
                 .addProductToCart(secondNameProduct);
         cartPage.openPage();
