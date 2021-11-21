@@ -14,7 +14,7 @@ public class CartTests extends BaseTest {
     @Test (description = "Human-readable test name")
     public void addProductToCartTest(@Optional("standard_user") String login, @Optional("secret_sauce") String password, @Optional("Sauce Labs Onesie") String secondNameProduct) {
         loginPage.openPage()
-                .login(login, password)
+                 .login(login, password)
                 .addProductToCart(secondNameProduct);
         cartPage.openPage();
         Assert.assertEquals(cartPage.getProductPrice(secondNameProduct), "$7.99");
