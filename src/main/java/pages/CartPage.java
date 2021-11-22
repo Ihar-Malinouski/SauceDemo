@@ -21,7 +21,7 @@ public class CartPage extends BasePage {
         return this;
     }
 
-    public CartPage waitForElementCheckoutButton() {
+     public CartPage waitForElementCheckoutButton() {
         waitForElementLocated(CHECKOUT_CLICK_BUTTON, 10);
         return this;
     }
