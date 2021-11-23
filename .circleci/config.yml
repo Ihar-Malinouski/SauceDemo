@@ -40,7 +40,7 @@ workflows:
   version: 2
   commit:
     jobs:
-      - ui-tests
+      - Ihar_Malinouski_Tests
   periodical:
     triggers:
       - schedule:
