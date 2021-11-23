@@ -14,7 +14,7 @@ public class CartTests extends BaseTest {
                 .login(login, password)
                 .addProductToCart(secondNameProduct);
         cartPage.openPage();
-        Assert.assertEquals(cartPage.getProductPrice(secondNameProduct), "$49.99");
+        Assert.assertEquals(cartPage.getProductPrice(secondNameProduct), "$7.99");
     }
 
     @Parameters({"login", "password", "firstNameProduct"})
