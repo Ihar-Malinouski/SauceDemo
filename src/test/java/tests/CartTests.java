@@ -64,15 +64,15 @@ public class CartTests extends BaseTest {
         Assert.assertEquals("Epic sadface: Username and password do not match any user in this service", loginPage.getErrorText("ERROR_TEXT_POP_UP"));
     }
 
-     @Parameters({"login", "password", "secondNameProduct"})
-    @Test
-    public void addProductToCartThisPageFactoryTest(@Optional("standard_user") String login, @Optional("secret_sauce") String password, @Optional("Sauce Labs Onesie") String secondNameProduct) {
-        loginPage.openPage()
-                .login(login, password)
-                .addProductToCart(secondNameProduct);
-        cartPage.openPage();
-        Assert.assertEquals(cartPage.getProductPrice(secondNameProduct), "$49.99");
-    }
+//     @Parameters({"login", "password", "secondNameProduct"})
+//    @Test
+//    public void addProductToCartThisPageFactoryTest(@Optional("standard_user") String login, @Optional("secret_sauce") String password, @Optional("Sauce Labs Onesie") String secondNameProduct) {
+//        loginPage.openPage()
+//                .login(login, password)
+//                .addProductToCart(secondNameProduct);
+//        cartPage.openPage();
+//        Assert.assertEquals(cartPage.getProductPrice(secondNameProduct), "$49.99");
+//    }
 
     @Parameters({"login", "password", "firstNameProduct", "firstName", "lastName", "zip"})
     @Test
