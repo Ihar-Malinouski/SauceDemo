@@ -52,7 +52,7 @@ public class CartTests extends BaseTest {
     @Issue("TMS-2")
     @TmsLink("TMS-3")
     public void productComparisonOnTheDetailsPageTest(@Optional("standard_user") String login, @Optional("secret_sauce") String password, @Optional("Sauce Labs Onesie") String secondNameProduct) {
-        cartSteps.loginAnfClickInImageAndAddProduct(login, password, secondNameProduct);
+        cartSteps.loginAndClickInImageAndAddProduct(login, password, secondNameProduct);
         Assert.assertEquals(cartPage.getQuantityLabel(secondNameProduct), cartPage.getQuantityIconCart());
     }
 
@@ -66,7 +66,7 @@ public class CartTests extends BaseTest {
         Assert.assertEquals("Epic sadface: Username is required", loginPage.getErrorText("ERROR_TEXT_POP_UP"));
         loginSteps.openPageAndClickButtonLoginErrorMessage();
         Assert.assertEquals("Epic sadface: Password is required", loginPage.getErrorText("ERROR_TEXT_POP_UP"));
-        loginSteps.openPageAndClickButtonLEmptyField();
+        loginSteps.openPageAndClickButtonEmptyField();
         Assert.assertEquals("Epic sadface: Username and password do not match any user in this service", loginPage.getErrorText("ERROR_TEXT_POP_UP"));
     }
 
