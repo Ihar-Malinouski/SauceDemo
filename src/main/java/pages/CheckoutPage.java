@@ -1,5 +1,6 @@
 package pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -20,12 +21,14 @@ public class CheckoutPage extends BasePage {
         return this;
     }
 
+    @Step("Заполенние полей для опланы '{firstName}' и '{lastName}' на странице CheckoutPage")
     public CheckoutPage fillInDataEntryForPayment(String firstName, String lastName, String zipPostalCode) {
         driver.findElement(FIRST_NAME_INPUT).sendKeys(firstName);
         driver.findElement(LAST_NAME_INPUT).sendKeys(lastName);
         return this;
     }
 
+    @Step("Нажатие кнопки CHECKOUT на странице CheckoutPage")
     public CheckoutPage clickContinueButton() {
         driver.findElement(CONTINUE_BUTTON).click();
         return this;
@@ -34,5 +37,4 @@ public class CheckoutPage extends BasePage {
     public String getErrorTextMessage(String validationMessageText) {
         return driver.findElement(By.xpath(String.format(ERROR_TEXT_EMPTY_FIELD, validationMessageText))).getText();
     }
-
 }

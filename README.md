@@ -1,4 +1,9 @@
- Команды для работы с MAVEN для проекта SauceDemo:
+Отчет allure при прохождении всех кейсов:
+1) Overview - ![img.png](img.png)
+2) Suites - ![img_1.png](img_1.png)
+
+
+Команды для работы с MAVEN для проекта SauceDemo:
 1) mvn versions:display-dependency-updates - просмотр доступных "свежих" версий для библиотек этого проекта
 
 Response:
