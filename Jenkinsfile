@@ -19,7 +19,7 @@ pipeline {
             git branch: "${params.BRANCH}", url: 'https://github.com/IharMalinouski/SauceDemo.git'
 
             // Run Maven on a Unix agent.
-            // sh "mvn clean test"
+            // s h "mvn clean test"
 
             // To run Maven on a Windows agent, use
             powershell 'mvn clean test'
