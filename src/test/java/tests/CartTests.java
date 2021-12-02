@@ -80,7 +80,7 @@ public class CartTests extends BaseTest {
 //        productSteps.loginAndAddProductToCart(login, password, secondNameProduct);
 //        Assert.assertEquals(cartPage.getProductPrice(secondNameProduct), "$49.99");
 //    }
-
+//S
     @Parameters({"login", "password", "firstNameProduct", "firstName", "lastName", "zip"})
     @Test(retryAnalyzer = Retry.class)
     @Description("Проверка соответсвия валидационного сообщения на странице checkoutPage")
