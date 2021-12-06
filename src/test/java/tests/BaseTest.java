@@ -1,6 +1,7 @@
 package tests;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.ITestContext;
@@ -13,6 +14,7 @@ import steps.CheckoutSteps;
 import steps.LoginSteps;
 import steps.ProductSteps;
 
+@Log4j2
 @Listeners(TestListener.class)
 public class BaseTest {
     WebDriver driver;
@@ -30,6 +32,7 @@ public class BaseTest {
     public void initTest(ITestContext context) {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
+        log.debug("Browser is started in fullscreen mode.");
         driver.manage().window().maximize();
         String driverVariable = "driver";
         context.setAttribute(driverVariable, driver);
@@ -46,6 +49,7 @@ public class BaseTest {
 
     @AfterMethod
     public void closeDriver() {
+        log.info("Close browser");
         driver.quit();
     }
 }

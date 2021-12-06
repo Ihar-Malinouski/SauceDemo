@@ -1,0 +1,106 @@
+2021-12-07 01:57:09.433 DEBUG [main] [tests.BaseTest] - Browser is started in fullscreen mode.
+2021-12-07 01:57:09.850 INFO [main] [pages.BasePage] - Opening URL: https://www.saucedemo.com
+2021-12-07 01:57:10.996 DEBUG [main] [pages.BasePage] - Waiter timeout is: 10 for element: By.xpath: //*[@id='login-button']
+2021-12-07 01:57:11.117 INFO [main] [pages.LoginPage] - Type text: 'standard_user' into username input from CheckoutPage. Locator is: 'By.xpath: //*[@id='user-name']'
+2021-12-07 01:57:11.384 INFO [main] [pages.LoginPage] - Type text: 'secret_sauce' into password input from CheckoutPage. Locator is: 'By.xpath: //*[@id='password']'
+2021-12-07 01:57:11.685 INFO [main] [pages.LoginPage] - Click button on LoginPage. Locator is: 'By.xpath: //*[@id='login-button']'
+2021-12-07 01:57:12.081 INFO [main] [pages.ProductsPage] - Add product on ProductsPage. Locator is: //*[text() ='%s']/ancestor::*[@class='inventory_item']//button
+2021-12-07 01:57:12.408 INFO [main] [pages.BasePage] - Opening URL: https://www.saucedemo.com/cart.html
+2021-12-07 01:57:13.505 DEBUG [main] [pages.BasePage] - Waiter timeout is: 10 for element: By.id: checkout
+2021-12-07 01:57:13.898 INFO [main] [tests.BaseTest] - Close browser
+2021-12-07 01:57:18.055 DEBUG [main] [tests.BaseTest] - Browser is started in fullscreen mode.
+2021-12-07 01:57:18.214 INFO [main] [pages.BasePage] - Opening URL: https://www.saucedemo.com
+2021-12-07 01:57:20.215 DEBUG [main] [pages.BasePage] - Waiter timeout is: 10 for element: By.xpath: //*[@id='login-button']
+2021-12-07 01:57:20.383 INFO [main] [pages.LoginPage] - Type text: 'standard_user' into username input from CheckoutPage. Locator is: 'By.xpath: //*[@id='user-name']'
+2021-12-07 01:57:20.885 INFO [main] [pages.LoginPage] - Type text: 'secret_sauce' into password input from CheckoutPage. Locator is: 'By.xpath: //*[@id='password']'
+2021-12-07 01:57:21.259 INFO [main] [pages.LoginPage] - Click button on LoginPage. Locator is: 'By.xpath: //*[@id='login-button']'
+2021-12-07 01:57:21.875 INFO [main] [pages.ProductsPage] - Add product on ProductsPage. Locator is: //*[text() ='%s']/ancestor::*[@class='inventory_item']//button
+2021-12-07 01:57:22.376 INFO [main] [pages.BasePage] - Opening URL: https://www.saucedemo.com/cart.html
+2021-12-07 01:57:23.317 DEBUG [main] [pages.BasePage] - Waiter timeout is: 10 for element: By.id: checkout
+2021-12-07 01:57:23.854 INFO [main] [tests.BaseTest] - Close browser
+2021-12-07 01:57:26.694 DEBUG [main] [tests.BaseTest] - Browser is started in fullscreen mode.
+2021-12-07 01:57:26.832 INFO [main] [pages.BasePage] - Opening URL: https://www.saucedemo.com
+2021-12-07 01:57:28.945 DEBUG [main] [pages.BasePage] - Waiter timeout is: 10 for element: By.xpath: //*[@id='login-button']
+2021-12-07 01:57:29.062 INFO [main] [pages.LoginPage] - Type text: 'standard_user' into username input from CheckoutPage. Locator is: 'By.xpath: //*[@id='user-name']'
+2021-12-07 01:57:29.266 INFO [main] [pages.LoginPage] - Type text: 'secret_sauce' into password input from CheckoutPage. Locator is: 'By.xpath: //*[@id='password']'
+2021-12-07 01:57:29.509 INFO [main] [pages.LoginPage] - Click button on LoginPage. Locator is: 'By.xpath: //*[@id='login-button']'
+2021-12-07 01:57:30.106 INFO [main] [pages.ProductsPage] - Add product on ProductsPage. Locator is: //*[text() ='%s']/ancestor::*[@class='inventory_item']//button
+2021-12-07 01:57:30.519 INFO [main] [pages.BasePage] - Opening URL: https://www.saucedemo.com/cart.html
+2021-12-07 01:57:31.361 DEBUG [main] [pages.BasePage] - Waiter timeout is: 10 for element: By.id: checkout
+2021-12-07 01:57:31.749 INFO [main] [tests.BaseTest] - Close browser
+2021-12-07 01:57:35.760 DEBUG [main] [tests.BaseTest] - Browser is started in fullscreen mode.
+2021-12-07 01:57:35.910 INFO [main] [pages.BasePage] - Opening URL: https://www.saucedemo.com
+2021-12-07 01:57:37.871 DEBUG [main] [pages.BasePage] - Waiter timeout is: 10 for element: By.xpath: //*[@id='login-button']
+2021-12-07 01:57:38.035 INFO [main] [pages.LoginPage] - Type text: 'standard_user' into username input from CheckoutPage. Locator is: 'By.xpath: //*[@id='user-name']'
+2021-12-07 01:57:38.563 INFO [main] [pages.LoginPage] - Type text: 'secret_sauce' into password input from CheckoutPage. Locator is: 'By.xpath: //*[@id='password']'
+2021-12-07 01:57:38.919 INFO [main] [pages.LoginPage] - Click button on LoginPage. Locator is: 'By.xpath: //*[@id='login-button']'
+2021-12-07 01:57:39.577 INFO [main] [pages.ProductsPage] - Add product on ProductsPage. Locator is: //*[text() ='%s']/ancestor::*[@class='inventory_item']//button
+2021-12-07 01:57:39.935 INFO [main] [pages.BasePage] - Opening URL: https://www.saucedemo.com/cart.html
+2021-12-07 01:57:41.145 DEBUG [main] [pages.BasePage] - Waiter timeout is: 10 for element: By.id: checkout
+2021-12-07 01:57:41.269 INFO [main] [pages.CartPage] - Get price for product: 'Sauce Labs Onesie'. Locator is: '//*[text()='%s']/ancestor::*[@class='cart_item']//*[@class='inventory_item_price']'
+2021-12-07 01:57:41.347 INFO [main] [pages.CartPage] - Product price is: $7.99
+2021-12-07 01:57:41.351 INFO [main] [tests.BaseTest] - Close browser
+2021-12-07 01:57:45.573 DEBUG [main] [tests.BaseTest] - Browser is started in fullscreen mode.
+2021-12-07 01:57:45.709 INFO [main] [pages.BasePage] - Opening URL: https://www.saucedemo.com
+2021-12-07 01:57:47.999 DEBUG [main] [pages.BasePage] - Waiter timeout is: 10 for element: By.xpath: //*[@id='login-button']
+2021-12-07 01:57:48.141 INFO [main] [pages.LoginPage] - Type text: 'standard_user' into username input from CheckoutPage. Locator is: 'By.xpath: //*[@id='user-name']'
+2021-12-07 01:57:48.628 INFO [main] [pages.LoginPage] - Type text: 'secret_sauce' into password input from CheckoutPage. Locator is: 'By.xpath: //*[@id='password']'
+2021-12-07 01:57:48.957 INFO [main] [pages.LoginPage] - Click button on LoginPage. Locator is: 'By.xpath: //*[@id='login-button']'
+2021-12-07 01:57:49.470 INFO [main] [pages.ProductsPage] - Add product on ProductsPage. Locator is: //*[text() ='%s']/ancestor::*[@class='inventory_item']//button
+2021-12-07 01:57:49.857 INFO [main] [pages.BasePage] - Opening URL: https://www.saucedemo.com/cart.html
+2021-12-07 01:57:51.305 DEBUG [main] [pages.BasePage] - Waiter timeout is: 10 for element: By.id: checkout
+2021-12-07 01:57:51.412 INFO [main] [pages.CartPage] - Get price for product: 'Sauce Labs Onesie'. Locator is: '//*[text()='%s']/ancestor::*[@class='cart_item']//*[@class='inventory_item_price']'
+2021-12-07 01:57:51.480 INFO [main] [pages.CartPage] - Product price is: $7.99
+2021-12-07 01:57:51.483 INFO [main] [tests.BaseTest] - Close browser
+2021-12-07 01:57:55.344 DEBUG [main] [tests.BaseTest] - Browser is started in fullscreen mode.
+2021-12-07 01:57:55.482 INFO [main] [pages.BasePage] - Opening URL: https://www.saucedemo.com
+2021-12-07 01:57:57.846 DEBUG [main] [pages.BasePage] - Waiter timeout is: 10 for element: By.xpath: //*[@id='login-button']
+2021-12-07 01:57:58.035 INFO [main] [pages.LoginPage] - Type text: 'standard_user' into username input from CheckoutPage. Locator is: 'By.xpath: //*[@id='user-name']'
+2021-12-07 01:57:58.483 INFO [main] [pages.LoginPage] - Type text: 'secret_sauce' into password input from CheckoutPage. Locator is: 'By.xpath: //*[@id='password']'
+2021-12-07 01:57:58.888 INFO [main] [pages.LoginPage] - Click button on LoginPage. Locator is: 'By.xpath: //*[@id='login-button']'
+2021-12-07 01:57:59.551 INFO [main] [pages.ProductsPage] - Add product on ProductsPage. Locator is: //*[text() ='%s']/ancestor::*[@class='inventory_item']//button
+2021-12-07 01:58:00.068 INFO [main] [pages.ProductsPage] - Add product on ProductsPage. Locator is: //*[text() ='%s']/ancestor::*[@class='inventory_item']//button
+2021-12-07 01:58:00.273 INFO [main] [pages.BasePage] - Opening URL: https://www.saucedemo.com/cart.html
+2021-12-07 01:58:01.028 DEBUG [main] [pages.BasePage] - Waiter timeout is: 10 for element: By.id: checkout
+2021-12-07 01:58:01.156 INFO [main] [pages.CartPage] - Removing a product from CartPage with the name: 'Sauce Labs Fleece Jacket'. Locator is: '//*[text()='%s']/ancestor::*[@class='cart_item']//button'
+2021-12-07 01:58:01.381 INFO [main] [pages.CartPage] - Product quantity icon from CartPage is: '1'. Locator is: '//*[@class='shopping_cart_badge']'
+2021-12-07 01:58:01.385 INFO [main] [tests.BaseTest] - Close browser
+2021-12-07 01:58:05.154 DEBUG [main] [tests.BaseTest] - Browser is started in fullscreen mode.
+2021-12-07 01:58:05.305 INFO [main] [pages.BasePage] - Opening URL: https://www.saucedemo.com
+2021-12-07 01:58:07.551 DEBUG [main] [pages.BasePage] - Waiter timeout is: 10 for element: By.xpath: //*[@id='login-button']
+2021-12-07 01:58:07.714 INFO [main] [pages.LoginPage] - Type text: 'standard_user' into username input from CheckoutPage. Locator is: 'By.xpath: //*[@id='user-name']'
+2021-12-07 01:58:08.221 INFO [main] [pages.LoginPage] - Type text: 'secret_sauce' into password input from CheckoutPage. Locator is: 'By.xpath: //*[@id='password']'
+2021-12-07 01:58:08.594 INFO [main] [pages.LoginPage] - Click button on LoginPage. Locator is: 'By.xpath: //*[@id='login-button']'
+2021-12-07 01:58:09.298 INFO [main] [pages.ProductsPage] - Add product on ProductsPage. Locator is: //*[text() ='%s']/ancestor::*[@class='inventory_item']//button
+2021-12-07 01:58:09.674 INFO [main] [pages.BasePage] - Opening URL: https://www.saucedemo.com/cart.html
+2021-12-07 01:58:10.437 DEBUG [main] [pages.BasePage] - Waiter timeout is: 10 for element: By.id: checkout
+2021-12-07 01:58:10.575 INFO [main] [pages.CartPage] - Get price for product: 'Sauce Labs Onesie'. Locator is: '//*[text()='%s']/ancestor::*[@class='cart_item']//*[@class='inventory_item_price']'
+2021-12-07 01:58:10.663 INFO [main] [pages.CartPage] - Product price is: $7.99
+2021-12-07 01:58:10.666 INFO [main] [tests.BaseTest] - Close browser
+2021-12-07 01:58:14.533 DEBUG [main] [tests.BaseTest] - Browser is started in fullscreen mode.
+2021-12-07 01:58:14.687 INFO [main] [pages.BasePage] - Opening URL: https://www.saucedemo.com
+2021-12-07 01:58:16.482 DEBUG [main] [pages.BasePage] - Waiter timeout is: 10 for element: By.xpath: //*[@id='login-button']
+2021-12-07 01:58:16.578 INFO [main] [pages.LoginPage] - Type text: 'standard_user' into username input from CheckoutPage. Locator is: 'By.xpath: //*[@id='user-name']'
+2021-12-07 01:58:16.848 INFO [main] [pages.LoginPage] - Type text: 'secret_sauce' into password input from CheckoutPage. Locator is: 'By.xpath: //*[@id='password']'
+2021-12-07 01:58:17.037 INFO [main] [pages.LoginPage] - Click button on LoginPage. Locator is: 'By.xpath: //*[@id='login-button']'
+2021-12-07 01:58:17.479 INFO [main] [pages.ProductsPage] - Add product on ProductsPage by clicking on the icon. Locator is: //*[text()='%s']/ancestor::*[@class='inventory_item']/*[@class='inventory_item_img']
+2021-12-07 01:58:17.854 INFO [main] [pages.ProductDetailsPage] - Get product on ProductDetailsPage: 'Sauce Labs Onesie'. Locator is: '//*[text()='%s']/ancestor::*[@class='inventory_details_desc_container']/*[contains(@class, 'btn_inventory')]'
+2021-12-07 01:58:18.048 INFO [main] [pages.BasePage] - Opening URL: https://www.saucedemo.com/cart.html
+2021-12-07 01:58:19.021 DEBUG [main] [pages.BasePage] - Waiter timeout is: 10 for element: By.id: checkout
+2021-12-07 01:58:19.151 INFO [main] [pages.CartPage] - Get quantity label for product: 'Sauce Labs Onesie'. Locator is: '//*[text()='%s']/ancestor::*[@class='cart_item']//*[@class='cart_quantity']'
+2021-12-07 01:58:19.227 INFO [main] [pages.CartPage] - Product label is:1
+2021-12-07 01:58:19.292 INFO [main] [pages.CartPage] - Product quantity icon from CartPage is: '1'. Locator is: '//*[@class='shopping_cart_badge']'
+2021-12-07 01:58:19.295 INFO [main] [tests.BaseTest] - Close browser
+2021-12-07 01:58:23.234 DEBUG [main] [tests.BaseTest] - Browser is started in fullscreen mode.
+2021-12-07 01:58:23.384 INFO [main] [pages.BasePage] - Opening URL: https://www.saucedemo.com
+2021-12-07 01:58:25.319 DEBUG [main] [pages.BasePage] - Waiter timeout is: 10 for element: By.xpath: //*[@id='login-button']
+2021-12-07 01:58:25.473 DEBUG [main] [pages.BasePage] - Waiter timeout is: 10 for element: By.xpath: //*[@id='login-button']
+2021-12-07 01:58:25.603 INFO [main] [pages.LoginPage] - Click button on LoginPage. Locator is: 'By.xpath: //*[@id='login-button']'
+2021-12-07 01:58:26.101 INFO [main] [pages.LoginPage] - Error text with incorrect authorization: Epic sadface: Username is required
+2021-12-07 01:58:26.102 INFO [main] [pages.LoginPage] - Type text: 'Ihar' into username input on LoginPage. Locator is: 'By.xpath: //*[@id='user-name']'
+2021-12-07 01:58:26.397 INFO [main] [pages.LoginPage] - Click button on LoginPage. Locator is: 'By.xpath: //*[@id='login-button']'
+2021-12-07 01:58:26.575 INFO [main] [pages.LoginPage] - Error text with incorrect authorization: Epic sadface: Password is required
+2021-12-07 01:58:26.576 INFO [main] [pages.LoginPage] - Type text: 'Ihar2' into username input on LoginPage. Locator is: 'By.xpath: //*[@id='password']'
+2021-12-07 01:58:26.952 INFO [main] [pages.LoginPage] - Click button on LoginPage. Locator is: 'By.xpath: //*[@id='login-button']'
+2021-12-07 01:58:27.121 INFO [main] [pages.LoginPage] - Error text with incorrect authorization: Epic sadface: Username and password do not match any user in this service
+2021-12-07 01:58:27.126 INFO [main] [tests.BaseTest] - Close browser

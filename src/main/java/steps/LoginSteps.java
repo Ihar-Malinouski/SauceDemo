@@ -25,7 +25,7 @@ public class LoginSteps {
     }
 
     public LoginSteps openPageAndClickButtonLEmptyField() {
-        loginPage.getEmptyloginField("Ihar2")
+        loginPage.getEmptyingField("Ihar2")
                 .errorFieldClickButton();
         return this;
     }

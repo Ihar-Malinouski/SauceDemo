@@ -4,11 +4,13 @@ import io.qameta.allure.Description;
 import io.qameta.allure.Issue;
 import io.qameta.allure.Link;
 import io.qameta.allure.TmsLink;
+import lombok.extern.log4j.Log4j2;
 import org.testng.Assert;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
+@Log4j2
 public class CartTests extends BaseTest {
 
     @Test(description = "Human-readable test name", retryAnalyzer = Retry.class)
@@ -70,16 +72,17 @@ public class CartTests extends BaseTest {
         Assert.assertEquals("Epic sadface: Username and password do not match any user in this service", loginPage.getErrorText("ERROR_TEXT_POP_UP"));
     }
 
-//    @Parameters({"login", "password", "secondNameProduct"})
-//    @Test(retryAnalyzer = Retry.class)
-//    @Description("Проверка соответсвия цены по имени продукта на странице cartPage")
-//    @Link("TMS-1")
-//    @Issue("TMS-2")
-//    @TmsLink("TMS-3")
-//    public void addProductToCartThisPageFactoryTest(@Optional("standard_user") String login, @Optional("secret_sauce") String password, @Optional("Sauce Labs Onesie") String secondNameProduct) {
-//        productSteps.loginAndAddProductToCart(login, password, secondNameProduct);
-//        Assert.assertEquals(cartPage.getProductPrice(secondNameProduct), "$49.99");
-//    }
+
+    @Parameters({"login", "password", "secondNameProduct"})
+    @Test(retryAnalyzer = Retry.class)
+    @Description("Проверка соответсвия цены по имени продукта на странице cartPage")
+    @Link("TMS-1")
+    @Issue("TMS-2")
+    @TmsLink("TMS-3")
+    public void addProductToCartThisPageFactoryTest(@Optional("standard_user") String login, @Optional("secret_sauce") String password, @Optional("Sauce Labs Onesie") String secondNameProduct) {
+        productSteps.loginAndAddProductToCart(login, password, secondNameProduct);
+        Assert.assertEquals(cartPage.getProductPrice(secondNameProduct), "$7.99");
+    }
 
     @Parameters({"login", "password", "firstNameProduct", "firstName", "lastName", "zip"})
     @Test(retryAnalyzer = Retry.class)

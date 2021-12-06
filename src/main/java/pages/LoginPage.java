@@ -1,9 +1,11 @@
 package pages;
 
 import io.qameta.allure.Step;
+import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+@Log4j2
 public class LoginPage extends BasePage {
 
     public LoginPage(WebDriver driver) {
@@ -17,8 +19,11 @@ public class LoginPage extends BasePage {
 
     @Step("Авторизация с Логин '{username}' и паролем '{password}' и нажатием на кнопку LOGIN")
     public ProductsPage login(String username, String password) {
+        log.info(String.format("Type text: '%s' into username input from CheckoutPage. Locator is: '%s'", username, USERNAME_INPUT));
         driver.findElement(USERNAME_INPUT).sendKeys(username);
+        log.info(String.format("Type text: '%s' into password input from CheckoutPage. Locator is: '%s'", password, PASSWORD_INPUT));
         driver.findElement(PASSWORD_INPUT).sendKeys(password);
+        log.info(String.format("Click button on LoginPage. Locator is: '%s'", BUTTON_LOGIN));
         driver.findElement(BUTTON_LOGIN).click();
         return new ProductsPage(driver);
     }
@@ -29,24 +34,29 @@ public class LoginPage extends BasePage {
         return this;
     }
 
-      public String getErrorText(String validationMessageText) {
-        return driver.findElement(By.xpath(String.format(ERROR_TEXT_POP_UP, validationMessageText))).getText();
+    public String getErrorText(String validationMessageText) {
+        String errorTextWithIncorrectAuthorization = driver.findElement(By.xpath(String.format(ERROR_TEXT_POP_UP, validationMessageText))).getText();
+        log.info("Error text with incorrect authorization: " + errorTextWithIncorrectAuthorization);
+        return errorTextWithIncorrectAuthorization;
     }
 
     @Step("Нажаите кнопки LOGIN на странице LoginPage")
     public LoginPage errorFieldClickButton() {
+        log.info(String.format("Click button on LoginPage. Locator is: '%s'", BUTTON_LOGIN));
         driver.findElement(BUTTON_LOGIN).click();
         return this;
     }
 
     @Step("Ввод значения '{username}' в поле login на странице LoginPage")
     public LoginPage getEmptyPasswordField(String username) {
+        log.info(String.format("Type text: '%s' into username input on LoginPage. Locator is: '%s'", username, USERNAME_INPUT));
         driver.findElement(USERNAME_INPUT).sendKeys(username);
         return this;
     }
 
     @Step("Ввод значения '{password}' в поле password на странице LoginPage")
-    public LoginPage getEmptyloginField(String password) {
+    public LoginPage getEmptyingField(String password) {
+        log.info(String.format("Type text: '%s' into username input on LoginPage. Locator is: '%s'", password, PASSWORD_INPUT));
         driver.findElement(PASSWORD_INPUT).sendKeys(password);
         return this;
     }
